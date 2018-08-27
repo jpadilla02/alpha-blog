@@ -58,7 +58,9 @@ $navbar-default-bg: black;
         width: 25px;
         height: 25px;
         background-color: #c7030b;
+        border: 1px solid #c7030b;
         margin: 58px auto 0;
+        border-radius: 5px;
         animation: light 2s linear infinite alternate;
     }
 }
