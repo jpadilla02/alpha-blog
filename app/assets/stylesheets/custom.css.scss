@@ -2,6 +2,15 @@ $navbar-default-bg: black;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@keyframes light{
+    from{
+        background-color: #c7030b;
+    }
+    to{
+        background-color: red;
+    }
+}
+
 #logo{
     float: left;
     font-size: 1.7em;
@@ -23,6 +32,7 @@ $navbar-default-bg: black;
 .jumbotron{
     background-image: asset-url('gtr.jpg');
     background-size: cover;
+    background-position: 50% 68%;
     height: 550px;
 
     h1{
@@ -37,10 +47,19 @@ $navbar-default-bg: black;
         font-size: 1.5em;
         background-color: #c7030b;
         color: #fff;
+        margin-top: 150px;
 
         &:hover{
             background-color: #481516
         }
+    }
+
+    .blinking-brake{
+        width: 25px;
+        height: 25px;
+        background-color: #c7030b;
+        margin: 58px auto 0;
+        animation: light 2s linear infinite alternate;
     }
 }
 
