@@ -19,7 +19,7 @@
                 </li>
 
                 <li>
-                    <a href="#">Link</a>
+                    <%= link_to "Users", users_path %>
                 </li>
 
                 <li class="dropdown">
@@ -63,22 +63,23 @@
             </form>
 
             <ul class="nav navbar-nav navbar-right">
+                <% if logged_in? %>
                 <li>
-                    <a href="#">Link</a>
+                    <%= link_to 'Log out', logout_path, method: :delete %>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        Dropdown 
+                        Your Profile 
                         <span class="caret"></span>
                     </a>
                     
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#">Action</a>
+                            <%= link_to "Edit your profile", edit_user_path(current_user) %>
                         </li>
 
                         <li>
-                            <a href="#">Another action</a>
+                            <%= link_to "View your profile", user_path(current_user) %>
                         </li>
 
                         <li>
@@ -92,6 +93,14 @@
                         </li>
                     </ul>
                 </li>
+                <% else %>
+                    <li>
+                        <%= link_to 'Log In', login_path %>
+                    </li>
+                    <li>
+                        <%= link_to 'Sign Up', signup_path%>
+                    </li>
+                <% end %>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
